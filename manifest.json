@@ -1,0 +1,25 @@
+{
+    "manifest_version": 2,
+    "name": "Stylerific",
+    "version": "1.0",
+
+    "description": "Web Browser add-on to let users specify custom stylesheets for different domains.",
+
+    "browser_action": {
+        "default_icon": "icons/browser-32.png",
+        "default_title": "Stylerific",
+        "default_popup": "popups/set_styles.html"
+    },
+
+    "background": {
+        "scripts": ["background.js"]
+    },
+
+    "permissions": [
+        "<all_urls>",
+        "activeTab",
+        "storage",
+        "tabs",
+        "webNavigation"
+    ]
+}
