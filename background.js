@@ -1,17 +1,24 @@
-browser.webNavigation.onDOMContentLoaded.addListener(function(details) {
-    browser.tabs.query({ active: true, currentWindow: true }).then(function(tabs) {
-        let hostname = tabs[0].url.match(/[^:]+:\/\/[^\/]+/)[0];
+/**
+* Load custom styles for a page, by finding the styles associated with the page's hostname.
+*
+* @param tab
+*/
+function loadTabStyles(tab) {
+    // extract the hostname from the tab's URL
+    let hostnameMatches = tab.url.match(/[^:]+:\/\/[^\/]+/);
 
-        if (hostname === null) {
-            return;
-        }
+    if (hostnameMatches !== null) {
+        let hostname = hostnameMatches[0];
 
         browser.storage.local.get().then(function(data) {
             let target = data[btoa(hostname)];
 
             if (target) {
-                browser.tabs.insertCSS(tabs[0].id, { code: target });
+                browser.tabs.insertCSS(tab.tabId, { code: target });
             }
         });
-    });
-});
+    }
+}
+
+// when the page has finished loading, attempt to load the custom styles onto the page
+browser.webNavigation.onDOMContentLoaded.addListener(loadTabStyles);
