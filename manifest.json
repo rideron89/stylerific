@@ -3,7 +3,7 @@
     "name": "Stylerific",
     "version": "1.0",
 
-    "description": "Web Browser add-on to let users specify custom stylesheets for different domains.",
+    "description": "Stylerific is a plugin that gives users the ability to add custom CSS to their favorite webpages, on a per-domain basis.",
 
     "browser_action": {
         "default_icon": "icons/browser-32.png",
@@ -13,6 +13,12 @@
 
     "background": {
         "scripts": ["background.js"]
+    },
+
+    "applications" : {
+        "gecko": {
+            "id": "stylerific@rideron89"
+        }
     },
 
     "permissions": [
