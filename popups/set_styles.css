@@ -1,7 +1,45 @@
+* {
+    box-sizing: border-box;
+}
+
 html, body {
     font-family: sans-serif;
     font-size: 14px;
     line-height: 1.6;
+    margin: 0;
+    max-height: none;
+    padding: 0;
+}
+
+body {
+    padding: 20px;
+}
+
+h1 {
+    margin: 0 0 15px;
+}
+
+select {
+    font: inherit;
+    margin: 0 0 15px;
+    width: 100%;
+}
+
+button {
+    background: linear-gradient(to bottom, #ec592b, #f14711);
+    border-radius: 2px;
+    border: 1px solid #a52902;
+    color: white;
+    display: block;
+    font-family: 'Helvetica Neue', Helvetica, Tahoma, sans-serif;
+    line-height: 28px;
+    padding: 0;
+    transition: all 0.15s ease;
+    width: 80px;
+}
+
+button:hover {
+    background: linear-gradient(to bottom, #f14711, #f14711);
 }
 
 textarea {
@@ -12,15 +50,28 @@ textarea {
     display: block;
     font-family: Consolas, monospace;
     font-size: 14px;
+    margin: 0 0 15px;
     padding: 6px 4px;
-    width: 400px;
+    width: 100%;
 }
 
 #HostnamePlaceholder {
-    background: #f2f2f2;
+    background: #ededed;
     border-radius: 2px;
     font-family: Consolas, monospace;
     font-size: 14px;
+    flex: auto;
     line-height: 1;
+    margin-left: 5px;
     padding: 6px 4px;
+}
+
+#DomainGrouping {
+    align-items: center;
+    align-content: center;
+    display: flex;
+}
+
+.container {
+    width: 600px;
 }

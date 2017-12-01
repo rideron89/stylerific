@@ -11,15 +11,22 @@
         <link rel="stylesheet" href="set_styles.css" />
     </head>
     <body>
-        <h1>Stylerific</h1>
+        <div class="container">
+            <h1>Stylerific</h1>
 
-        <p>The following styles will be applied to all pages under this domain:</p>
+            <p id="DomainGrouping">
+                <span class="pre">Styles for:</span>
+                <span id="HostnamePlaceholder"></span>
+            </p>
 
-        <p id="HostnamePlaceholder"></p>
+            <select id="PresetSelect">
+                <option value="">Copy over previously saved styles?</option>
+            </select>
 
-        <textarea rows="15" id="StylesTextarea"></textarea>
+            <textarea rows="20" id="StylesTextarea" spellcheck="false"></textarea>
 
-        <button type="button" id="SaveButton">Save</button>
+            <button type="button" id="SaveButton">Save</button>
+        </div>
 
         <script src="set_styles.js"></script>
     </body>
