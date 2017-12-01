@@ -5,13 +5,13 @@
 */
 function loadTabStyles(tab) {
     // extract the hostname from the tab's URL
-    let hostnameMatches = tab.url.match(/[^:]+:\/\/[^\/]+/);
+    var hostnameMatches = tab.url.match(/[^:]+:\/\/[^\/]+/);
 
     if (hostnameMatches !== null) {
-        let hostname = hostnameMatches[0];
+        var hostname = hostnameMatches[0];
 
         browser.storage.local.get().then(function(data) {
-            let target = data[btoa(hostname)];
+            var target = data[btoa(hostname)];
 
             if (target) {
                 browser.tabs.insertCSS(tab.tabId, { code: target });
